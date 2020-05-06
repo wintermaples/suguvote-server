@@ -1,0 +1,25 @@
+Host suguvote-back
+ User git
+ Port 22
+ Hostname github.com
+ IdentityFile ~/.ssh/suguvote-back
+ TCPKeepAlive yes
+ IdentitiesOnly yes
+
+
+Host suguvote-front
+ User git
+ Port 22
+ Hostname github.com
+ IdentityFile ~/.ssh/suguvote-front
+ TCPKeepAlive yes
+ IdentitiesOnly yes
+
+
+Host suguvote-server-script
+ User git
+ Port 22
+ Hostname github.com
+ IdentityFile ~/.ssh/suguvote-server-script
+ TCPKeepAlive yes
+ IdentitiesOnly yes
