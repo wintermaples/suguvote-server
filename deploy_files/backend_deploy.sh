@@ -1,12 +1,10 @@
 #!/bin/sh
 
-sudo systemctl stop nginx
-sudo systemctl stop emperor.uwsgi.service
-
+cd `dirname $0`
 
 sudo rm -R /var/www/suguvote-back/
 sudo mkdir /var/www/suguvote-back/
-cd ~/deploy/
+cd deploy/
 sudo rm -R suguvote-back/
 git clone -b dev git@suguvote-back:wintermaples/suguvote-back.git
 sudo cp -R suguvote-back/* /var/www/suguvote-back/
@@ -23,7 +21,3 @@ sudo rm /etc/nginx/sites-enabled/suguvote_nginx.conf
 sudo rm /etc/uwsgi/vassals/suguvote_uwsgi.ini
 sudo ln -s /var/www/suguvote-back/suguvote_nginx.conf /etc/nginx/sites-enabled/
 sudo ln -s /var/www/suguvote-back/suguvote_uwsgi.ini /etc/uwsgi/vassals/
-
-
-sudo systemctl start emperor.uwsgi.service
-sudo systemctl start nginx
