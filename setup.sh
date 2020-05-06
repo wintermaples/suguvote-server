@@ -2,7 +2,7 @@
 
 # Install required packages.
 sudo apt-get update
-sudo apt-get install nodejs nginx build-essential python3.8 python3.8-dev mongodb
+sudo apt-get install nodejs nginx build-essential python3.8 python3.8-dev mongodb -y
 
 # Install yarn, webpack-cli.
 sudo npm install -g yarn
@@ -18,6 +18,7 @@ sudo pip install pipenv
 sudo pip install uwsgi
 
 # Copy emperor.uwsgi.service for systemd.
+
 
 # Copy emperor.ini.
 
