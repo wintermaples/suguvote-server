@@ -16,10 +16,10 @@ Host suguvote-front
  IdentitiesOnly yes
 
 
-Host suguvote-server-script
+Host suguvote-server
  User git
  Port 22
  Hostname github.com
- IdentityFile ~/.ssh/suguvote-server-script
+ IdentityFile ~/.ssh/suguvote-server
  TCPKeepAlive yes
  IdentitiesOnly yes
