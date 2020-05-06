@@ -5,6 +5,7 @@ Host suguvote-back
  IdentityFile ~/.ssh/suguvote-back
  TCPKeepAlive yes
  IdentitiesOnly yes
+ StrictHostKeyChecking no
 
 
 Host suguvote-front
@@ -14,6 +15,7 @@ Host suguvote-front
  IdentityFile ~/.ssh/suguvote-front
  TCPKeepAlive yes
  IdentitiesOnly yes
+ StrictHostKeyChecking no
 
 
 Host suguvote-server
@@ -23,3 +25,4 @@ Host suguvote-server
  IdentityFile ~/.ssh/suguvote-server
  TCPKeepAlive yes
  IdentitiesOnly yes
+ StrictHostKeyChecking no
