@@ -28,11 +28,11 @@ sudo apt-get install build-essential nginx git -y
 
 # Get pip.
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3.8 get-pip.py
+sudo python3.8 get-pip.py
 rm get-pip.py
 
 # Install pipenv.
-sudo pip3.8 install pipenv
+sudo pip install pipenv
 
 # Install uwsgi.
-sudo pip3.8 install uwsgi
+sudo pip install uwsgi
