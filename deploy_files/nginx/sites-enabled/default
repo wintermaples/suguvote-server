@@ -46,6 +46,9 @@ server {
         server_name _;
 
         location / {
+                add_header 'X-Frame-Options' 'SAMEORIGIN';
+                add_header 'X-XSS-Protection' '1; mode=block.';
+                add_header 'X-Content-Type-Options' 'nosniff';
                 try_files $uri $uri/ /index.html;
         }
 
