@@ -29,4 +29,5 @@ sudo cp nginx/sites-enabled/default /etc/nginx/sites-enabled/
 # Configure tls
 chmod +x configure_tls.sh
 ./configure_tls.sh
+ps aux | grep nginx | grep -v grep | awk '{ print "kill ", $2 }' | sh # certbot nginx plugin bug
 sudo systemctl stop nginx
