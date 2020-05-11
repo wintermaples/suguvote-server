@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd `dirname $0`
+cd $(cd $(dirname $0)/.. && pwd)
 
 # Install required packages.
 sudo apt-get update

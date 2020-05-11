@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd `dirname $0`
+cd $(cd $(dirname $0)/.. && pwd)
 
 sudo rm -R /var/www/html/
 sudo mkdir /var/www/html/
