@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd $(cd $(dirname $0)/.. && pwd)
+cd `dirname $0`
 
 sudo rm -R /var/www/suguvote-back/
 sudo mkdir /var/www/suguvote-back/
