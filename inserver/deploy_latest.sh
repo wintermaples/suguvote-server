@@ -9,6 +9,6 @@ git clone git@suguvote-server:wintermaples/suguvote-server.git suguvote-server
 chmod +x suguvote-server/deploy.sh
 ./suguvote-server/deploy.sh
 
-sudo systemctl start mongob
-sudo systemctl start emperor.uwsgi.service
-sudo systemctl start nginx
+sudo systemctl restart mongob
+sudo systemctl restart emperor.uwsgi.service
+sudo systemctl restart nginx
