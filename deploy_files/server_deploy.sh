@@ -20,6 +20,11 @@ sudo rm /etc/uwsgi/emperor.ini
 sudo cp uwsgi/emperor.ini /etc/uwsgi/
 
 
+##### Setup mongod #####
+sudo rm /etc/mongod.conf
+sudo cp mongo/mongod.conf /etc/
+
+
 ##### Setup nginx #####
 
 # Remove and Copy default site configuration file.

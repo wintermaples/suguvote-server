@@ -37,5 +37,16 @@ sudo pip install pipenv
 # Install uwsgi.
 sudo pip install uwsgi
 
+# Install pymongo.
+sudo pip install pymongo
+
 # Install certbot.
 sudo apt-get install certbot python-certbot-nginx -y
+
+# Init mongodb
+python3.8 init_mongodb.py
+
+# Touch uwsgi env file.
+sudo touch /root/uwsgi_env
+sudo chmod 600 /root/uwsgi_env
+sudo chown www-data:www-data /root/uwsgi_env
