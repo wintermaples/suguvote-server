@@ -36,3 +36,6 @@ sudo pip install pipenv
 
 # Install uwsgi.
 sudo pip install uwsgi
+
+# Install certbot.
+sudo apt-get install certbot python-certbot-nginx -y
