@@ -27,7 +27,6 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo cp nginx/sites-enabled/default /etc/nginx/sites-enabled/
 
 # Configure tls
-sudo systemctl start nginx
 chmod +x configure_tls.sh
 ./configure_tls.sh
 sudo systemctl stop nginx
