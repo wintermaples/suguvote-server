@@ -46,11 +46,9 @@ sudo apt-get install certbot python-certbot-nginx -y
 # Init mongodb
 python3.8 init_mongodb.py
 
-# Touch uwsgi env file.
-sudo mkdir /opt/uwsgi/
-sudo touch /opt/uwsgi/uwsgi_env.sh
-sudo chmod 550 /opt/uwsgi/uwsgi_env.sh
-sudo chown www-data:www-data /opt/uwsgi/uwsgi_env.sh
+# Make directories for running uwsgi on emperor mode.
+sudo mkdir /etc/uwsgi/
+sudo mkdir /etc/uwsgi/vassals/
 
 # Mkdir uwsgi log folder.
 sudo mkdir /var/log/uwsgi/

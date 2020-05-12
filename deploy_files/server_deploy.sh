@@ -4,11 +4,6 @@ cd `dirname $0`
 
 ##### Setup uwsgi #####
 
-# Remove and Copy opt/uwsgi/emperor.uwsgi.sh
-sudo rm /opt/uwsgi/emperor.uwsgi.sh
-sudo cp systemd/opt/uwsgi/emperor.uwsgi.sh /opt/uwsgi/emperor.uwsgi.sh
-sudo chmod +x /opt/uwsgi/emperor.uwsgi.sh
-sudo chown www-data:www-data /opt/uwsgi/emperor.uwsgi.sh
 # Remove and Copy emperor.uwsgi.service for systemd.
 sudo rm /etc/systemd/system/emperor.uwsgi.service
 sudo cp systemd/emperor.uwsgi.service /etc/systemd/system/
@@ -16,14 +11,6 @@ sudo cp systemd/emperor.uwsgi.service /etc/systemd/system/
 sudo systemctl daemon-reload
 # Enable emperor.uwsgi.service.
 sudo systemctl enable emperor.uwsgi.service
-
-# Make directories for running uwsgi on emperor mode.
-sudo mkdir /etc/uwsgi/
-sudo mkdir /etc/uwsgi/vassals/
-# Remove and Copy emperor.ini.
-sudo rm /etc/uwsgi/emperor.ini
-sudo cp uwsgi/emperor.ini /etc/uwsgi/
-
 
 ##### Setup mongod #####
 sudo rm /etc/mongod.conf
