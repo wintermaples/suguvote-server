@@ -47,6 +47,7 @@ sudo apt-get install certbot python-certbot-nginx -y
 python3.8 init_mongodb.py
 
 # Touch uwsgi env file.
-sudo touch /root/uwsgi_env
-sudo chmod 600 /root/uwsgi_env
-sudo chown www-data:www-data /root/uwsgi_env
+sudo mkdir /opt/uwsgi/
+sudo touch /opt/uwsgi/uwsgi_env.sh
+sudo chmod 550 /opt/uwsgi/uwsgi_env.sh
+sudo chown www-data:www-data /opt/uwsgi/uwsgi_env.sh

@@ -4,6 +4,11 @@ cd `dirname $0`
 
 ##### Setup uwsgi #####
 
+# Remove and Copy opt/uwsgi/emperor.uwsgi.sh
+sudo rm /opt/uwsgi/emperor.uwsgi.sh
+sudo cp systemd/opt/uwsgi/emperor.uwsgi.sh /opt/uwsgi/emperor.uwsgi.sh
+sudo chmod +x /opt/uwsgi/emperor.uwsgi.sh
+sudo chown www-data:www-data /opt/uwsgi/emperor.uwsgi.sh
 # Remove and Copy emperor.uwsgi.service for systemd.
 sudo rm /etc/systemd/system/emperor.uwsgi.service
 sudo cp systemd/emperor.uwsgi.service /etc/systemd/system/
