@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/var/www/uwsgi_env.sh
+source /opt/uwsgi/uwsgi_env.sh
 uwsgi --ini /etc/uwsgi/emperor.ini
