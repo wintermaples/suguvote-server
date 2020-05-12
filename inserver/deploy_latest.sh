@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export DJANGO_SECRET_KEY=
+
 sudo systemctl stop nginx
 sudo systemctl stop emperor.uwsgi.service
 sudo systemctl stop mongod
