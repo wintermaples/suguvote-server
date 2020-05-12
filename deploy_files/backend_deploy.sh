@@ -14,8 +14,8 @@ sudo chown -R www-data:www-data /var/www/suguvote-back/
 cd /var/www/suguvote-back/
 sudo pipenv install
 sudo pipenv install --system
-sudo -u www-data python3.8 manage.py migrate
-sudo -u www-data python3.8 manage.py collectstatic
+sudo -u www-data -E python3.8 manage.py migrate
+sudo -u www-data -E python3.8 manage.py collectstatic
 
 sudo rm /etc/nginx/sites-enabled/suguvote_nginx.conf
 sudo rm /etc/uwsgi/vassals/suguvote_uwsgi.ini
