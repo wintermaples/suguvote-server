@@ -53,3 +53,6 @@ sudo mkdir /etc/uwsgi/vassals/
 # Mkdir uwsgi log folder.
 sudo mkdir /var/log/uwsgi/
 sudo chown www-data:www-data /var/log/uwsgi/
+
+# Enable mongod.
+sudo systemctl enable mongod
