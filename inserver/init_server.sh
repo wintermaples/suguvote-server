@@ -24,21 +24,15 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 rm server-4.2.asc
 # Install other required packages.
-sudo apt-get install build-essential nginx git -y
+sudo apt-get install build-essential nginx git memcached -y
 
 # Get pip.
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo python3.8 get-pip.py
 rm get-pip.py
 
-# Install pipenv.
-sudo pip install pipenv
-
-# Install uwsgi.
-sudo pip install uwsgi
-
-# Install pymongo.
-sudo pip install pymongo
+# Install pipenv, uwsgi, pymongo.
+sudo pip install pipenv uwsgi pymongo
 
 # Install certbot.
 sudo apt-get install certbot python-certbot-nginx -y
