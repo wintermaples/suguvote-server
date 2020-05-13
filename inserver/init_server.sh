@@ -24,7 +24,7 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 rm server-4.2.asc
 # Install other required packages.
-sudo apt-get install build-essential nginx git memcached mariadb-server -y
+sudo apt-get install build-essential nginx git memcached mariadb-server libmariadb-dev-compat libmariadb-dev -y
 
 # Get pip.
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py

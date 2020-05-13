@@ -8,6 +8,8 @@ cd `dirname $0`
 sudo rm -R ./deploy_files/deploy/
 mkdir ./deploy_files/deploy/
 
+echo echo $MARIADB_SUGUVOTE_USERNAME
+
 chmod +x deploy_files/server_deploy.sh
 ./deploy_files/server_deploy.sh
 cd `dirname $0`

@@ -10,6 +10,7 @@ git clone -b implement-#37 git@suguvote-back:wintermaples/suguvote-back.git
 sudo cp -R suguvote-back/* /var/www/suguvote-back/
 sudo chown -R www-data:www-data /var/www/suguvote-back/
 
+echo $MARIADB_SUGUVOTE_USERNAME
 
 cd /var/www/suguvote-back/
 sudo pipenv install
