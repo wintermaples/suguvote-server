@@ -24,21 +24,15 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 rm server-4.2.asc
 # Install other required packages.
-sudo apt-get install build-essential nginx git -y
+sudo apt-get install build-essential nginx git memcached mariadb-server libmariadb-dev-compat libmariadb-dev -y
 
 # Get pip.
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo python3.8 get-pip.py
 rm get-pip.py
 
-# Install pipenv.
-sudo pip install pipenv
-
-# Install uwsgi.
-sudo pip install uwsgi
-
-# Install pymongo.
-sudo pip install pymongo
+# Install pipenv, uwsgi, pymongo.
+sudo pip install pipenv uwsgi pymongo
 
 # Install certbot.
 sudo apt-get install certbot python-certbot-nginx -y
@@ -53,3 +47,12 @@ sudo mkdir /etc/uwsgi/vassals/
 # Mkdir uwsgi log folder.
 sudo mkdir /var/log/uwsgi/
 sudo chown www-data:www-data /var/log/uwsgi/
+
+# Enable mongod.
+sudo systemctl enable mongod
+
+# Setup mariadb.
+echo "Please enter suguvote password: "
+read password
+sudo mysql_secure_installation --use-default
+sudo mysql -u root -p -e "CREATE DATABASE suguvote;CREATE USER IF NOT EXISTS suguvote@'localhost' IDENTIFIED BY '$password';GRANT ALL ON suguvote.* TO 'suguvote'@'localhost';"
