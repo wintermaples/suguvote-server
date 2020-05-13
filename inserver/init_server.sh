@@ -24,7 +24,7 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 rm server-4.2.asc
 # Install other required packages.
-sudo apt-get install build-essential nginx git memcached -y
+sudo apt-get install build-essential nginx git memcached mariadb-server libmariadb-dev-compat libmariadb-dev -y
 
 # Get pip.
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -50,3 +50,9 @@ sudo chown www-data:www-data /var/log/uwsgi/
 
 # Enable mongod.
 sudo systemctl enable mongod
+
+# Setup mariadb.
+echo "Please enter suguvote password: "
+read password
+sudo mysql_secure_installation --use-default
+sudo mysql -u root -p -e "CREATE DATABASE suguvote;CREATE USER IF NOT EXISTS suguvote@'localhost' IDENTIFIED BY '$password';GRANT ALL ON suguvote.* TO 'suguvote'@'localhost';"
