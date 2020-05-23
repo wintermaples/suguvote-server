@@ -54,5 +54,5 @@ sudo systemctl enable mongod
 # Setup mariadb.
 echo "Please enter suguvote password: "
 read password
-sudo mysql_secure_installation --use-default
+sudo mysql_secure_installation
 sudo mysql -u root -p -e "CREATE DATABASE suguvote;CREATE USER IF NOT EXISTS suguvote@'localhost' IDENTIFIED BY '$password';GRANT ALL ON suguvote.* TO 'suguvote'@'localhost';"
