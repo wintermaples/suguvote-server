@@ -4,7 +4,7 @@ sudo systemctl stop nginx
 sudo systemctl stop emperor.uwsgi.service
 sudo systemctl stop mongod
 
-source ./set_environments.sh
+. ./set_environments.sh
 sudo rm -R suguvote-server/
 git clone -b dev git@suguvote-server:wintermaples/suguvote-server.git suguvote-server
 chmod +x suguvote-server/deploy.sh
