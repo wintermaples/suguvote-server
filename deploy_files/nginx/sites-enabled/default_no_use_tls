@@ -27,8 +27,6 @@ server {
 server {
         listen 80;
         listen [::]:80;
-        listen 443;
-        listen [::]:443;
         server_name suguvote.net;
         return 301 https://www.suguvote.net$request_uri;
 }
@@ -38,10 +36,8 @@ server {
 server {
         # SSL configuration
         #
-        listen 443 ssl default_server;
-        listen [::]:443 ssl default_server;
-        ssl_protocols  TLSv1.2 TLSv1.3;
-        ssl_ciphers         HIGH:!aNULL:!MD5;
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
         root /var/www/html;
 

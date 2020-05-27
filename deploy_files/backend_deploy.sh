@@ -18,5 +18,9 @@ sudo -u www-data -E python3.8 manage.py collectstatic
 
 sudo rm /etc/nginx/sites-enabled/suguvote_nginx.conf
 sudo rm /etc/uwsgi/vassals/suguvote_uwsgi.ini
-sudo ln -s /var/www/suguvote-back/suguvote_nginx.conf /etc/nginx/sites-enabled/
+if [ $NO_USE_TLS != "True" ]; then
+  sudo ln -s /var/www/suguvote-back/suguvote_nginx_no_use_tls.conf /etc/nginx/sites-enabled/
+else
+  sudo ln -s /var/www/suguvote-back/suguvote_nginx.conf /etc/nginx/sites-enabled/
+fi
 sudo ln -s /var/www/suguvote-back/suguvote_uwsgi.ini /etc/uwsgi/vassals/
