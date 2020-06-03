@@ -1,4 +1,9 @@
 #!/bin/sh
 
-sudo certbot --nginx -w /var/www/html/ -d www.suguvote.net -d suguvote.net -m tpgwinter@gmail.com --agree-tos -n
-sudo certbot --webroot -w /var/www/html/ -d api.suguvote.net -m tpgwinter@gmail.com --agree-tos -n
+if [ "$FORCE_RENEWAL_TLS" == "True" ]; then
+  sudo certbot --force-renewal --nginx -w /var/www/html/ -d www.suguvote.net -d suguvote.net -m tpgwinter@gmail.com --agree-tos -n
+  sudo certbot --force-renewal --webroot -w /var/www/html/ -d api.suguvote.net -m tpgwinter@gmail.com --agree-tos -n
+else
+  sudo certbot --nginx -w /var/www/html/ -d www.suguvote.net -d suguvote.net -m tpgwinter@gmail.com --agree-tos -n
+  sudo certbot --webroot -w /var/www/html/ -d api.suguvote.net -m tpgwinter@gmail.com --agree-tos -n
+fi
