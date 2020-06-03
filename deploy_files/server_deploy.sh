@@ -22,8 +22,10 @@ sudo cp mongo/mongod.conf /etc/
 # Remove and Copy default site configuration file.
 sudo rm /etc/nginx/sites-enabled/default
 if [ "$NO_USE_TLS" != "True" ]; then
+  echo "===== USING_TLS ====="
   sudo cp nginx/sites-enabled/default /etc/nginx/sites-enabled/
 else
+  echo "===== NO_USING_TLS ====="
   sudo cp nginx/sites-enabled/default_no_use_tls /etc/nginx/sites-enabled/
 fi
 
