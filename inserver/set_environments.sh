@@ -16,3 +16,5 @@
 # export DJANGO_DEBUG=False
 
 # export NO_USE_TLS=False
+
+# export FORCE_RENEWAL_TLS=False
