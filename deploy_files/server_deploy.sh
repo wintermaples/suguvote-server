@@ -21,14 +21,14 @@ sudo cp mongo/mongod.conf /etc/
 
 # Remove and Copy default site configuration file.
 sudo rm /etc/nginx/sites-enabled/default
-if [ $NO_USE_TLS != "True" ]; then
+if [ "$NO_USE_TLS" != "True" ]; then
   sudo cp nginx/sites-enabled/default /etc/nginx/sites-enabled/
 else
   sudo cp nginx/sites-enabled/default_no_use_tls /etc/nginx/sites-enabled/
 fi
 
 # Configure tls
-if [ $NO_USE_TLS != "True" ]; then
+if [ "$NO_USE_TLS" != "True" ]; then
   chmod +x configure_tls.sh
   ./configure_tls.sh
   ps aux | grep nginx | grep -v grep | awk '{ print "kill ", $2 }' | sh # certbot nginx plugin bug
