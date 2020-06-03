@@ -6,7 +6,7 @@ sudo systemctl stop mongod
 
 . ./set_environments.sh
 sudo rm -R suguvote-server/
-git clone -b dev git@suguvote-server:wintermaples/suguvote-server.git suguvote-server
+git clone -b "alpha-dev.3-r1" git@suguvote-server:wintermaples/suguvote-server.git suguvote-server
 chmod +x suguvote-server/deploy.sh
 ./suguvote-server/deploy.sh
 
